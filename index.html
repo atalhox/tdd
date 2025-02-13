@@ -423,6 +423,11 @@
     Service--&gt;Controller;
     Controller--&gt;IntegrationTest;
 </code></pre>
+<p>Para casos essenciais:</p>
+<pre class="mermaid"><code>graph TD;
+    Repository--&gt;Service;
+    Service--&gt;Controller;
+</code></pre>
 <p>Cada camada tem um conjunto de testes específico, descrito a seguir:</p>
 <h3 id="41-model-tests">4.1. Model Tests<a class="headerlink" href="#41-model-tests" title="Permanent link">¶</a></h3>
 <p>Os testes de modelo verificam se as entidades possuem os atributos corretos, validações e comportamento esperado.</p>
