@@ -20,21 +20,25 @@ A estrutura de testes segue uma hierarquia clara para garantir a cobertura de to
 
 ```mermaid
 graph TD;
-    Model-->Repository;
-    Repository-->Service;
-    Service-->Controller;
-    Controller-->IntegrationTest;
+    TestService-->Service;
+    Service-->TestRepository;
+    TestRepository-->Repository;
+    Repository-->TestController;
+    TestController-->Controller;
+    Controller-->TestIntegration;
+    TestIntegration-->IntegrationTest;
 ```
 
 Para casos essenciais:
 
 ```mermaid
 graph TD;
-    Repository-->Service;
-    Service-->Controller;
+    TestService-->Service;
+    Service-->TestRepository;
+    TestRepository-->Repository;
+    Repository-->TestController;
+    TestController-->Controller;
 ```
-
-Cada camada tem um conjunto de testes específico, descrito a seguir:
 
 ### 4.1. Model Tests
 Os testes de modelo verificam se as entidades possuem os atributos corretos, validações e comportamento esperado.
