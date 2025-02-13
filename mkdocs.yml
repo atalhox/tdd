@@ -1,0 +1,146 @@
+# Configurações básicas do site
+site_name: TDD
+site_url: https://atalhox.github.io/tdd
+repo_url: https://github.com/atalhox/tdd
+
+# Configurações do servidor local
+dev_addr: "127.0.0.1:8000" # Endereço e porta para rodar localmente
+
+# Plugins configurados
+plugins:
+  - search: # Adiciona funcionalidade de busca
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - mermaid2 # Suporte para diagramas Mermaid
+  - social # Ícones para redes sociais
+  - awesome-pages # Organização automática de páginas
+
+# Extensões Markdown ativadas
+markdown_extensions:
+  - attr_list # Permite adicionar atributos HTML em elementos Markdown
+  - pymdownx.emoji: # Suporte a emojis
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - abbr # Suporte para abreviações
+  - admonition # Caixas de alerta (ex.: "Nota", "Dica", "Perigo")
+  - def_list # Listas de definições
+  - footnotes # Suporte para rodapés
+  - md_in_html # Markdown dentro de blocos HTML
+  - toc: # Índice de conteúdos (Table of Contents)
+      permalink: true # Links permanentes nos cabeçalhos
+      toc_depth: 3 # Profundidade máxima do índice
+  - tables # Suporte para tabelas no Markdown
+  - pymdownx.arithmatex: # Renderização matemática (LaTeX)
+      generic: true
+  - pymdownx.betterem: # Melhora ênfases (ex.: *texto*, **texto**)
+      smart_enable: all
+  - pymdownx.caret # Marcações com ^texto^
+  - pymdownx.details # Blocos de detalhes expansíveis
+  - pymdownx.highlight # Destaque de sintaxe para código
+  - pymdownx.inlinehilite # Destaque de código inline
+  - pymdownx.keys # Combinações de teclas estilizadas
+  - pymdownx.mark # Marcações com `==highlight==`
+  - pymdownx.smartsymbols # Converte `--` e `...` em símbolos tipográficos
+  - pymdownx.superfences: # Suporte avançado para blocos de código
+      # make exceptions to highlighting of code:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid_custom
+  - pymdownx.tabbed: # Conteúdo em abas
+      alternate_style: true
+  - pymdownx.tasklist: # Listas de tarefas
+      custom_checkbox: true
+  - pymdownx.tilde # Marcações com ~~texto~~
+
+# Tema Material configurado
+theme:
+  name: material # Usa o tema Material for MkDocs
+
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: pink
+      toggle:
+        icon: material/brightness-2
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-1
+        name: Switch to system preference
+
+  # # Paletas de cores
+  # palette:
+  #   - media: "(prefers-color-scheme: light)" # Tema claro
+  #     scheme: default
+  #     primary: indigo
+  #     accent: pink
+  #   - media: "(prefers-color-scheme: dark)" # Tema escuro
+  #     scheme: slate
+  #     primary: indigo
+  #     accent: pink
+
+  # Fontes personalizadas
+  font:
+    text: "Roboto"
+    code: "Fira Code"
+
+  # Recursos do tema
+  features:
+    - announce.dismiss # Permite descartar mensagens ou avisos
+
+    # - content.action.edit # Adiciona um botão para editar conteúdo diretamente
+    # - content.action.view # Adiciona um botão para visualizar o conteúdo original
+    - content.code.annotate # Permite adicionar anotações em blocos de código
+    - content.code.copy # Adiciona um botão para copiar blocos de código
+    - content.code.select # Adiciona uma opção para selecionar blocos de código
+    - content.tooltips # Mostra dicas flutuantes em elementos interativos
+    # - content.footnote.tooltips # Mostra rodapés como dicas flutuantes
+
+    - color.mode # Ativa o suporte a modos claro e escuro
+    - color.switch # Adiciona um botão para alternar entre os modos
+
+    # - header.autohide # Esconde automaticamente o cabeçalho ao rolar a página
+
+    # - navigation.expand # Expande automaticamente a navegação lateral
+    - navigation.footer # Adiciona um rodapé de navegação no site
+    - navigation.indexes # Gera índices adicionais para navegação
+    - navigation.instant # Carrega páginas instantaneamente ao clicar
+    # - navigation.instant.prefetch # Faz pré-carregamento de páginas próximas
+    # - navigation.instant.progress # Mostra uma barra de progresso durante o carregamento
+    # - navigation.prune # Remove automaticamente itens antigos da navegação
+    # - navigation.tabs.sticky # Mantém as abas fixas no topo ao rolar
+    - navigation.path # Mostra o caminho de navegação atual
+    - navigation.sections # Barra lateral com seções
+    - navigation.tabs # Barra de navegação com abas
+    - navigation.top # Navbar no topo
+    - navigation.tracking # Adiciona rastreamento de navegação
+
+    - palette # Suporte a paletas de cores
+    - search.highlight # Realça os termos buscados
+    - search.suggest # Sugere termos relacionados durante a busca
+    - search.share # Compartilhamento de buscas
+
+    - toc.follow # Destaque automático da seção atual
+    # - toc.sticky # Barra lateral com o ToC
+    # - toc.integrate # ToC integrado ao layout
+
+# Links de redes sociais
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/atalhox
+    - icon: fontawesome/brands/twitter
+      link: https://www.twitter.com/eunaoeradev
+    - icon: fontawesome/brands/instagram
+      link: https://www.instagram.com/eunaoeradev
+    - icon: fontawesome/brands/linkedin
+      link: https://br.linkedin.com/in/luisfelipebrum
+    - icon: fontawesome/brands/tiktok
+      link: https://www.tiktok.com/eunaoeradev
