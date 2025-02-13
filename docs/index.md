@@ -26,6 +26,14 @@ graph TD;
     Controller-->IntegrationTest;
 ```
 
+Para casos essenciais:
+
+```mermaid
+graph TD;
+    Repository-->Service;
+    Service-->Controller;
+```
+
 Cada camada tem um conjunto de testes específico, descrito a seguir:
 
 ### 4.1. Model Tests
