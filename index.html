@@ -418,17 +418,22 @@
 <h2 id="4-hierarquia-dos-testes">4. Hierarquia dos Testes<a class="headerlink" href="#4-hierarquia-dos-testes" title="Permanent link">¶</a></h2>
 <p>A estrutura de testes segue uma hierarquia clara para garantir a cobertura de todas as camadas do sistema:</p>
 <pre class="mermaid"><code>graph TD;
-    Model--&gt;Repository;
-    Repository--&gt;Service;
-    Service--&gt;Controller;
-    Controller--&gt;IntegrationTest;
+    TestService--&gt;Service;
+    Service--&gt;TestRepository;
+    TestRepository--&gt;Repository;
+    Repository--&gt;TestController;
+    TestController--&gt;Controller;
+    Controller--&gt;TestIntegration;
+    TestIntegration--&gt;IntegrationTest;
 </code></pre>
 <p>Para casos essenciais:</p>
 <pre class="mermaid"><code>graph TD;
-    Repository--&gt;Service;
-    Service--&gt;Controller;
+    TestService--&gt;Service;
+    Service--&gt;TestRepository;
+    TestRepository--&gt;Repository;
+    Repository--&gt;TestController;
+    TestController--&gt;Controller;
 </code></pre>
-<p>Cada camada tem um conjunto de testes específico, descrito a seguir:</p>
 <h3 id="41-model-tests">4.1. Model Tests<a class="headerlink" href="#41-model-tests" title="Permanent link">¶</a></h3>
 <p>Os testes de modelo verificam se as entidades possuem os atributos corretos, validações e comportamento esperado.</p>
 <p><strong>Exemplo:</strong>
